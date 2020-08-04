@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#424242"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.serenegiant.usb.widget.UVCCameraTextureView
+            android:id="@+id/camera_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <projects.exploitr.espcar.UselessButton
+            android:id="@+id/slideplus"
+            android:layout_width="44dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/slide_left"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rotatplus" />
+
+        <projects.exploitr.espcar.UselessButton
+            android:id="@+id/rotatplus"
+            android:layout_width="44dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/rotate_up"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <projects.exploitr.espcar.UselessButton
+            android:id="@+id/slideminus"
+            android:layout_width="44dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/slide_right"
+            app:layout_constraintStart_toEndOf="@+id/slideplus"
+            app:layout_constraintTop_toBottomOf="@+id/rotatminus" />
+
+        <projects.exploitr.espcar.UselessButton
+            android:id="@+id/rotatminus"
+            android:layout_width="44dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/rotate_down"
+            app:layout_constraintStart_toEndOf="@+id/rotatplus"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="276dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <projects.exploitr.espcar.UselessButton
+            android:id="@+id/top"
+            android:layout_width="51dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/up"
+            android:foregroundGravity="center"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="horizontal">
+
+            <projects.exploitr.espcar.UselessButton
+                android:id="@+id/right"
+                android:layout_width="44dp"
+                android:layout_height="53dp"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/left" />
+
+            <projects.exploitr.espcar.UselessButton
+                android:id="@+id/left"
+                android:layout_width="44dp"
+                android:layout_height="53dp"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginStart="32dp"
+                android:background="@drawable/right" />
+        </LinearLayout>
+
+        <projects.exploitr.espcar.UselessButton
+            android:id="@+id/bottom"
+            android:layout_width="52dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/down" />
+
+    </LinearLayout>
+
+    <Switch
+        android:id="@+id/incr_accl"
+        style="@style/Widget.AppCompat.CompoundButton.Switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:padding="10dp"
+        android:text="@string/acceleration"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/status"
+        android:layout_width="20dp"
+        android:layout_height="7dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/status"
+        app:layout_constraintBottom_toTopOf="@+id/incr_accl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.011"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/status_server_disconnected" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

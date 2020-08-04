@@ -1,0 +1,2 @@
+include ':app', ':usbcameralib'
+project(':usbcameralib').projectDir = new File('libusbcamera')
